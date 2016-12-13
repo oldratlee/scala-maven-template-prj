@@ -1,0 +1,220 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.oldratlee.scala.hello</groupId>
+    <artifactId>hello-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>${project.artifactId}</name>
+    <inceptionYear>2016</inceptionYear>
+
+    <modules>
+        <module>api</module>
+        <module>core</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <slf.version>1.7.22</slf.version>
+
+        <scala.version>2.12.1</scala.version>
+        <scala.lib.suffix.version>_2.12</scala.lib.suffix.version>
+
+            <specs2.version>3.8.6</specs2.version>
+        <scalamock.version>3.4.2</scalamock.version>
+    </properties>
+
+    <dependencies>
+        <!-- Testing libs -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- ========================================================== -->
+            <!-- logging libs -->
+            <!-- ========================================================== -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${slf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>${slf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-to-slf4j</artifactId>
+                <version>2.7</version>
+            </dependency>
+            <!-- ========================================================== -->
+            <!-- scala libs -->
+            <!-- ========================================================== -->
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-library</artifactId>
+                <version>${scala.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-compiler</artifactId>
+                <version>${scala.version}</version>
+            </dependency>
+            <!-- ========================================================== -->
+            <!-- Testing libs -->
+            <!-- ========================================================== -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+                <scope>test</scope>
+            </dependency>
+            <!--
+                official site: https://www.scalacheck.org/
+            -->
+            <dependency>
+                <groupId>org.scalacheck</groupId>
+                <artifactId>scalacheck${scala.lib.suffix.version}</artifactId>
+                <version>1.13.4</version>
+                <scope>test</scope>
+            </dependency>
+            <!--
+                official site: http://www.scalatest.org
+                quick start: http://www.scalatest.org/quick_start
+            -->
+            <dependency>
+                <groupId>org.scalatest</groupId>
+                <artifactId>scalatest${scala.lib.suffix.version}</artifactId>
+                <version>3.0.1</version>
+                <scope>test</scope>
+            </dependency>
+            <!--
+                Office site: https://etorreborre.github.io/specs2
+                Github repo: https://github.com/etorreborre/specs2
+                Examples: https://github.com/etorreborre/specs2/tree/SPECS2-3.8.6/examples/src/test/scala/examples
+                Specs2 Dependencies:
+                    https://etorreborre.github.io/specs2/guide/SPECS2-3.8.6/org.specs2.guide.Installation.html#other-dependencies
+                Run with maven the Surefire plugin and the test command:
+                    https://etorreborre.github.io/specs2/guide/SPECS2-3.8.6/org.specs2.guide.OtherBuildTools.html
+            -->
+            <dependency>
+                <groupId>org.specs2</groupId>
+                <artifactId>specs2-core${scala.lib.suffix.version}</artifactId>
+                <version>${specs2.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.specs2</groupId>
+                <artifactId>specs2-mock${scala.lib.suffix.version}</artifactId>
+                <version>${specs2.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.specs2</groupId>
+                <artifactId>specs2-scalacheck${scala.lib.suffix.version}</artifactId>
+                <version>${specs2.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.specs2</groupId>
+                <artifactId>specs2-junit${scala.lib.suffix.version}</artifactId>
+                <version>${specs2.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- ========================================================== -->
+            <!-- Mock libs -->
+            <!-- ========================================================== -->
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>2.5.0</version>
+                <scope>test</scope>
+            </dependency>
+            <!--
+                official site: http://scalamock.org/
+            -->
+            <dependency>
+                <groupId>org.scalamock</groupId>
+                <artifactId>scalamock-scalatest-support${scala.lib.suffix.version}</artifactId>
+                <version>${scalamock.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.scalamock</groupId>
+                <artifactId>scalamock-specs2-support${scala.lib.suffix.version}</artifactId>
+                <version>${scalamock.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <!--
+                Scala with Maven http://docs.scala-lang.org/tutorials/scala-with-maven.html
+                scala-maven-plugin https://github.com/davidB/scala-maven-plugin
+                Scala java maven 混合开发 pom配置 https://my.oschina.net/itwangxinli/blog/336182
+                -->
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>3.2.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Jerry Lee</name>
+            <id>oldratlee</id>
+            <email>oldratlee(AT)gmail(DOT)com</email>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+</project>
