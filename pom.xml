@@ -113,12 +113,17 @@
             </dependency>
             <dependency>
                 <groupId>org.scala-lang</groupId>
+                <artifactId>scala-reflect</artifactId>
+                <version>${scala.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.scala-lang</groupId>
                 <artifactId>scala-compiler</artifactId>
                 <version>${scala.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.scala-lang</groupId>
-                <artifactId>scala-reflect</artifactId>
+                <artifactId>scalap</artifactId>
                 <version>${scala.version}</version>
             </dependency>
             <!-- ========================================================== -->
