@@ -17,11 +17,12 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf.version>1.7.22</slf.version>
+        <log4j2.version>2.7</log4j2.version>
 
         <scala.version>2.12.1</scala.version>
         <scala.lib.suffix.version>_2.12</scala.lib.suffix.version>
 
-            <specs2.version>3.8.6</specs2.version>
+        <specs2.version>3.8.6</specs2.version>
         <scalamock.version>3.4.2</scalamock.version>
     </properties>
 
@@ -44,25 +45,63 @@
             <!-- ========================================================== -->
             <!-- logging libs -->
             <!-- ========================================================== -->
+            <!--
+            Log4j 2 + Slf4j 的配置和使用: http://blog.csdn.net/clementad/article/details/44625787
+            -->
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf.version}</version>
             </dependency>
+            <!--
+            https://logging.apache.org/log4j/2.0/log4j-slf4j-impl/index.html
+            DO NOT include log4j-to-slf4j dependency, as it will cause events to endlessly be routed between SLF4J and Log4j 2.
+            -->
             <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-log4j12</artifactId>
-                <version>${slf.version}</version>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j-impl</artifactId>
+                <version>${log4j2.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+            <!--
+            Bridging legacy APIs http://www.slf4j.org/legacy.html
+            by using wrapped implementations
+            -->
+            <!-- Bridge commons-logging -->
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>jcl-over-slf4j</artifactId>
                 <version>${slf.version}</version>
             </dependency>
+            <!-- Bridge log4j v1 -->
             <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-to-slf4j</artifactId>
-                <version>2.7</version>
+                <groupId>org.slf4j</groupId>
+                <artifactId>log4j-over-slf4j</artifactId>
+                <version>${slf.version}</version>
+            </dependency>
+            <!-- Bridge java.util.logging -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jul-to-slf4j</artifactId>
+                <version>${slf.version}</version>
+            </dependency>
+            <!--
+            Logging in Scala: http://stackoverflow.com/questions/978252/logging-in-scala
+            Github repo: https://github.com/typesafehub/scala-logging
+            -->
+            <dependency>
+                <groupId>com.typesafe.scala-logging</groupId>
+                <artifactId>scala-logging${scala.lib.suffix.version}</artifactId>
+                <version>3.5.0</version>
             </dependency>
             <!-- ========================================================== -->
             <!-- scala libs -->
@@ -75,6 +114,11 @@
             <dependency>
                 <groupId>org.scala-lang</groupId>
                 <artifactId>scala-compiler</artifactId>
+                <version>${scala.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-reflect</artifactId>
                 <version>${scala.version}</version>
             </dependency>
             <!-- ========================================================== -->
@@ -146,6 +190,12 @@
                 <artifactId>mockito-core</artifactId>
                 <version>2.5.0</version>
                 <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <!--
                 official site: http://scalamock.org/
