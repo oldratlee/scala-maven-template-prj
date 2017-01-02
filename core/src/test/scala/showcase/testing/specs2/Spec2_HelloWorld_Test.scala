@@ -1,4 +1,4 @@
-package showcase.ut
+package showcase.testing.specs2
 
 import org.junit.runner.RunWith
 import org.specs2.runner.JUnitRunner
