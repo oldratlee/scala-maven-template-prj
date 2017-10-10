@@ -25,6 +25,9 @@
 
         <specs2.version>4.13.0</specs2.version>
         <scalamock.version>5.1.0</scalamock.version>
+
+        <akka.version>2.6.16</akka.version>
+        <akka.http.version>10.2.6</akka.http.version>
     </properties>
 
     <dependencies>
@@ -132,6 +135,22 @@
                 <artifactId>scalap</artifactId>
                 <version>${scala.version}</version>
             </dependency>
+            <!-- akka libs -->
+            <dependency>
+                <groupId>com.typesafe.akka</groupId>
+                <artifactId>akka-actor${scala.lib.suffix.version}</artifactId>
+                <version>${akka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.typesafe.akka</groupId>
+                <artifactId>akka-stream${scala.lib.suffix.version}</artifactId>
+                <version>${akka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.typesafe.akka</groupId>
+                <artifactId>akka-http${scala.lib.suffix.version}</artifactId>
+                <version>${akka.http.version}</version>
+            </dependency>
             <!-- ========================================================== -->
             <!-- Testing libs -->
             <!-- ========================================================== -->
@@ -215,6 +234,25 @@
                 <groupId>org.scalamock</groupId>
                 <artifactId>scalamock${scala.lib.suffix.version}</artifactId>
                 <version>${scalamock.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- akka libs -->
+            <dependency>
+                <groupId>com.typesafe.akka</groupId>
+                <artifactId>akka-testkit${scala.lib.suffix.version}</artifactId>
+                <version>${akka.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.typesafe.akka</groupId>
+                <artifactId>akka-stream-testkit${scala.lib.suffix.version}</artifactId>
+                <version>${akka.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.typesafe.akka</groupId>
+                <artifactId>akka-http-testkit${scala.lib.suffix.version}</artifactId>
+                <version>${akka.http.version}</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>
