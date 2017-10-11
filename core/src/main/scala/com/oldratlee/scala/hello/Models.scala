@@ -13,7 +13,7 @@ class Person(val name: String,
 class Employee(override val name: String,
                override val age: Int,
                override val pet: Pet,
-               val company: Company)
+               val company: Company) // Use Java class Company from Scala
   extends Person(name, age, pet) {
 
   override def toString = s"Employee($name, $age, $pet, $company)"

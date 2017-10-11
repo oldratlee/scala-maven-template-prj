@@ -1,10 +1,10 @@
-package showcase.testing.scalatest
+package showcase.testing.scalacheck
 
 import com.oldratlee.scala.hello.Person
 import org.scalacheck.Prop.propBoolean
 import org.scalacheck.{Gen, Prop, Properties}
 
-object BasicScalaCheckProperties extends Properties("Hello") {
+object BasicScalaCheckPropertiesTest extends Properties("Hello") {
   // simple properties
   property("Sums is associative") = Prop.forAll {
     (x: Int, y: Int) => x + y == y + x
