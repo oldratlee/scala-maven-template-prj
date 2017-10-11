@@ -227,16 +227,30 @@
             <plugin>
                 <!--
                 Scala with Maven http://docs.scala-lang.org/tutorials/scala-with-maven.html
-                scala-maven-plugin https://github.com/davidB/scala-maven-plugin
                 Scala java maven 混合开发 pom配置 https://my.oschina.net/itwangxinli/blog/336182
+                My mixed Scala/Java Maven project doesn't compile https://stackoverflow.com/questions/24448582
+
+                Official documentation:
+                scala-maven-plugin https://github.com/davidB/scala-maven-plugin
+                Mixed Java/Scala Projects http://davidb.github.io/scala-maven-plugin/example_java.html
                 -->
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
                 <version>3.3.1</version>
                 <executions>
                     <execution>
+                        <id>scala-compile-first</id>
+                        <phase>process-resources</phase>
                         <goals>
+                            <goal>add-source</goal>
                             <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>scala-test-compile-first</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>add-source</goal>
                             <goal>testCompile</goal>
                         </goals>
                     </execution>
