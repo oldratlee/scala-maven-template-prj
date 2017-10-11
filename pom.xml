@@ -233,6 +233,8 @@
                 Official documentation:
                 scala-maven-plugin https://github.com/davidB/scala-maven-plugin
                 Mixed Java/Scala Projects http://davidb.github.io/scala-maven-plugin/example_java.html
+                Incremental Compile http://davidb.github.io/scala-maven-plugin/example_incremental.html
+                    much faster compilation by running as a server, keeping the JVM and classloaders warm
                 -->
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
