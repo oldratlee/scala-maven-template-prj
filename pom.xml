@@ -21,6 +21,7 @@
         <log4j2.version>2.9.1</log4j2.version>
 
         <scala.version>2.12.4</scala.version>
+        <scala.modules.version>1.0.6</scala.modules.version>
         <scala.lib.suffix.version>_2.12</scala.lib.suffix.version>
 
         <specs2.version>3.9.5</specs2.version>
@@ -108,6 +109,7 @@
             <!-- ========================================================== -->
             <!-- scala libs -->
             <!-- ========================================================== -->
+            <!-- scala lang libs -->
             <dependency>
                 <groupId>org.scala-lang</groupId>
                 <artifactId>scala-library</artifactId>
@@ -127,6 +129,17 @@
                 <groupId>org.scala-lang</groupId>
                 <artifactId>scalap</artifactId>
                 <version>${scala.version}</version>
+            </dependency>
+            <!-- scala lang modules -->
+            <dependency>
+                <groupId>org.scala-lang.modules</groupId>
+                <artifactId>scala-parser-combinators${scala.lib.suffix.version}</artifactId>
+                <version>${scala.modules.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.scala-lang.modules</groupId>
+                <artifactId>scala-xml${scala.lib.suffix.version}</artifactId>
+                <version>${scala.modules.version}</version>
             </dependency>
             <!-- ========================================================== -->
             <!-- Testing libs -->
