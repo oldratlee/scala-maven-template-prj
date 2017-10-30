@@ -12,5 +12,7 @@
         <Root level="INFO">
             <AppenderRef ref="Console"/>
         </Root>
+        <!-- check preparing statement, aka. generated SQL -->
+        <logger name="slick.jdbc" level="DEBUG"/>
     </Loggers>
 </Configuration>
