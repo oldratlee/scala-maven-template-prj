@@ -132,6 +132,18 @@
                 <artifactId>scalap</artifactId>
                 <version>${scala.version}</version>
             </dependency>
+            <!-- db libs -->
+            <dependency>
+                <groupId>com.typesafe.slick</groupId>
+                <artifactId>slick${scala.lib.suffix.version}</artifactId>
+                <version>3.3.3</version>
+            </dependency>
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>1.4.200</version>
+            </dependency>
+
             <!-- ========================================================== -->
             <!-- Testing libs -->
             <!-- ========================================================== -->

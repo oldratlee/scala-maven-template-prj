@@ -52,6 +52,16 @@
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
         </dependency>
+        <!-- db libs -->
+        <dependency>
+            <groupId>com.typesafe.slick</groupId>
+            <artifactId>slick${scala.lib.suffix.version}</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
         <!-- Testing libs -->
         <dependency>
             <groupId>org.scalacheck</groupId>
