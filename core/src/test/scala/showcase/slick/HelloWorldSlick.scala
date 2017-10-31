@@ -3,7 +3,6 @@ package showcase.slick
 // Use H2Profile to connect to an H2 database
 import slick.jdbc.H2Profile.api._
 
-import scala.collection.mutable.ArrayBuffer
 import scala.concurrent.Await
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration.Duration
@@ -101,12 +100,8 @@ object HelloWorldSlick {
       }
 
       Await.result(resultFuture, Duration.Inf)
-      lines.foreach(Predef.println)
 
     } finally db.close
   }
 
-  private val lines = new ArrayBuffer[Any]()
-
-  private def println(s: Any) = lines += s
 }
