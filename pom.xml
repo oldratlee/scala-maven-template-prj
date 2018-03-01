@@ -18,13 +18,13 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf.version>1.7.25</slf.version>
-        <log4j2.version>2.9.1</log4j2.version>
+        <log4j2.version>2.10.0</log4j2.version>
 
         <scala.version>2.12.4</scala.version>
-        <scala.modules.version>1.0.6</scala.modules.version>
+        <scala.modules.version>1.1.0</scala.modules.version>
         <scala.lib.suffix.version>_2.12</scala.lib.suffix.version>
 
-        <specs2.version>3.9.5</specs2.version>
+        <specs2.version>4.0.3</specs2.version>
         <scalamock.version>3.6.0</scalamock.version>
     </properties>
 
@@ -104,7 +104,7 @@
             <dependency>
                 <groupId>com.typesafe.scala-logging</groupId>
                 <artifactId>scala-logging${scala.lib.suffix.version}</artifactId>
-                <version>3.7.2</version>
+                <version>3.8.0</version>
             </dependency>
             <!-- ========================================================== -->
             <!-- scala libs -->
@@ -166,7 +166,7 @@
             <dependency>
                 <groupId>org.scalatest</groupId>
                 <artifactId>scalatest${scala.lib.suffix.version}</artifactId>
-                <version>3.0.4</version>
+                <version>3.0.5</version>
                 <scope>test</scope>
             </dependency>
             <!--
@@ -208,7 +208,7 @@
             <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
-                <version>2.11.0</version>
+                <version>2.15.0</version>
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
