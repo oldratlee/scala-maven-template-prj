@@ -7,6 +7,6 @@ public class JavaLogDemo {
     private static final Logger logger = LoggerFactory.getLogger(JavaLogDemo.class);
 
     public static void main(String[] args) {
-        logger.info("Hello java logger!");
+        logger.info("Hello java logger, {}!", System.getProperty("user.name"));
     }
 }
