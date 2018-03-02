@@ -79,12 +79,7 @@
         <!-- Mock libs -->
         <dependency>
             <groupId>org.scalamock</groupId>
-            <artifactId>scalamock-scalatest-support${scala.lib.suffix.version}</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.scalamock</groupId>
-            <artifactId>scalamock-specs2-support${scala.lib.suffix.version}</artifactId>
+            <artifactId>scalamock${scala.lib.suffix.version}</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
