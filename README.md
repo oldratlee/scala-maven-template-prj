@@ -14,10 +14,10 @@ scala-maven-template-prj
 
 1. poso(Plain Old Scala Object)/pojo class (use **between** languages) 
     - poso: [Employee](core/src/main/scala/com/oldratlee/scala/hello/Models.scala)
-    - pojo: [Company](core/src/main/java/com/oldratlee/scala/hello/Company.java)
+    - pojo: [Company](core/src/main/java/com/oldratlee/java/hello/Company.java)
 1. scala/java hello world main class (invoke **between** languages)
-    - scala: [ScalaMain](core/src/main/scala/hello/ScalaMain.scala)
-    - java: [JavaMain](core/src/main/java/hello/JavaMain.java)
+    - scala: [ScalaMain](core/src/main/scala/com/oldratlee/scala/hello/ScalaMain.scala)
+    - java: [JavaMain](core/src/main/java/com/oldratlee/java/hello/JavaMain.java)
 1. Logging
     - scala: [ScalaLogDemo](core/src/test/scala/showcase/log/ScalaLogDemo.scala)
     - java: [JavaLogDemo](core/src/test/java/showcase/log/JavaLogDemo.java)

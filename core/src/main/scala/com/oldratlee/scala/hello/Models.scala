@@ -1,5 +1,7 @@
 package com.oldratlee.scala.hello
 
+import com.oldratlee.java.hello.Company
+
 case class Pet(name: String)
 
 class Person(val name: String,

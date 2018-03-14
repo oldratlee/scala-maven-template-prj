@@ -1,6 +1,6 @@
-package hello
+package com.oldratlee.scala.hello
 
-import com.oldratlee.scala.hello.{Company, Employee, Pet}
+import com.oldratlee.java.hello.{Company, JavaMain}
 
 /**
   * Hello world demo.

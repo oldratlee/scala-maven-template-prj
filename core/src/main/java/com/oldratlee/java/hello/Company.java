@@ -1,4 +1,4 @@
-package com.oldratlee.scala.hello;
+package com.oldratlee.java.hello;
 
 public class Company {
     private final String name;
