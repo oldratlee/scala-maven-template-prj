@@ -13,6 +13,13 @@
     <name>${project.artifactId}</name>
 
     <dependencies>
+        <!-- self dependencies -->
+        <dependency>
+            <groupId>com.oldratlee.scala.hello</groupId>
+            <artifactId>hello-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <!-- ========================================================== -->
         <!-- logging libs -->
         <!-- ========================================================== -->
