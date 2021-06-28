@@ -18,7 +18,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf.version>1.7.25</slf.version>
-        <log4j2.version>2.11.0</log4j2.version>
+        <log4j2.version>2.13.2</log4j2.version>
 
         <scala.version>2.12.5</scala.version>
         <scala.modules.version>1.1.0</scala.modules.version>
