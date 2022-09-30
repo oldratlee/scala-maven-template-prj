@@ -20,7 +20,7 @@
         <slf.version>1.7.32</slf.version>
         <log4j2.version>2.15.0</log4j2.version>
 
-        <scala.version>2.13.7</scala.version>
+        <scala.version>2.13.9</scala.version>
         <scala.lib.suffix.version>_2.13</scala.lib.suffix.version>
 
         <specs2.version>4.13.0</specs2.version>
